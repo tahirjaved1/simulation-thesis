@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:tahirjaved1/simulation-thesis.git
     ref: main
-    path: helics
+    path: charts/ghosts
   values:
     image:
       repository: l191852/helics-simulation
