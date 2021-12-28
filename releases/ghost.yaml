@@ -2,21 +2,21 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: ghost
-  namespace: demo
+  name: helics
+  namespace: helics
   annotations:
     fluxcd.io/automated: "false"
     fluxcd.io/tag.chart-image: glob:3.1.1-debian-9-*
 spec:
-  releaseName: ghost
+  releaseName: helics
   chart:
-    git: git@github.com:tahirjaved1/flux-get-started.git
-    ref: master
+    git: git@github.com:tahirjaved1/simulation-thesis.git
+    ref: main
     path: charts/ghost
   values:
     image:
-      repository: bitnami/ghost
-      tag: 3.1.1-debian-9-r0
+      repository: l191852/helics-simulation
+      tag: latest
     persistence:
       enabled: false
     resources:
