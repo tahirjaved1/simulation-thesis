@@ -1,0 +1,20 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: helics
+  namespace: helics-flux
+  labels:
+    chart: helics
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:dev-*
+spec:
+  releaseName: helics
+  chart:
+    git: git@github.com:tahirjaved1/simulation-thesis
+    path: /
+    ref: master
+  values:
+    image: l191852/helics-simulation:latest
+    replicaCount: 5
